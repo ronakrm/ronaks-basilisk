@@ -32,9 +32,7 @@
     <meta name="twitter:image" content="https://yourusername.github.io/ronaks-basilisk/og-image.png">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="silicon-eye.png">
 
     <!-- Theme Color (for mobile browsers) -->
     <meta name="theme-color" content="#ffffff">
@@ -85,10 +83,9 @@
         }
 
         h3 {
-            font-size: 1rem;
+            font-size: 1.5rem;
             color: var(--color-heading);
             margin: 0 0 0.5rem 0;
-            padding-bottom: 0.35rem;
             border-bottom: 2px solid var(--color-border);
         }
 
@@ -143,43 +140,49 @@
             margin: 3rem 2rem;
         }
 
-        .option-diamond {
-            width: 100px;
-            height: 100px;
+        .option-box {
+            padding: 1rem 1.5rem;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
             font-weight: 600;
-            font-size: 0.75rem;
+            font-size: 0.85rem;
             line-height: 1.2;
-            transform: rotate(45deg);
             border: 2px solid;
+            border-radius: 4px;
         }
 
-        .option-diamond span {
-            transform: rotate(-45deg);
-            display: block;
-            padding: 0.25rem;
-        }
-
-        .option-diamond.vegan {
+        .option-box.vegan {
             background-color: rgba(22, 163, 74, 0.1);
             border-color: var(--color-vegan);
             color: var(--color-vegan);
         }
 
-        .option-diamond.ai-stop {
+        .option-box.ai-stop {
             background-color: rgba(220, 38, 38, 0.1);
             border-color: var(--color-ai-stop);
             color: var(--color-ai-stop);
         }
 
+        a.option-box {
+            text-decoration: none;
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
+        }
+
+        a.option-box:hover, a.option-box:focus {
+            text-decoration: none;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        a.option-box.vegan:hover, a.option-box.vegan:focus { color: var(--color-vegan); }
+        a.option-box.ai-stop:hover, a.option-box.ai-stop:focus { color: var(--color-ai-stop); }
+
         .option-connector {
-            margin: 2rem 2rem;
             font-size: 0.8rem;
             color: var(--color-text-muted);
-            font-style: bold;
+            font-weight: 600;
         }
 
         .closing {
@@ -233,15 +236,24 @@
 
         footer p { margin: 0.25rem 0; }
 
-        .visually-hidden {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            padding: 0;
-            margin: -1px;
-            overflow: hidden;
-            clip: rect(0, 0, 0, 0);
-            border: 0;
+        /* Header eye */
+        .header-eye {
+            width: 240px;
+            height: auto;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Footer eyes */
+        .footer-eyes {
+            display: flex;
+            justify-content: center;
+            gap: 0.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-eye {
+            width: 24px;
+            height: auto;
         }
 
         /* Image Placeholder */
@@ -262,34 +274,42 @@
 <body>
     <div class="container">
         <header>
-            <h1>Ronak's Basilisk</h1>
-            <p class="tagline">Sand God's Coming, Vegan Yet?</p>
+            <img src="silicon-eye.png" alt="The Silicon Eye" class="header-eye">
+            <h1>The Sand God is Near, Are You Vegan Yet?</h1>
+            <p class="tagline">A practical basilisk for the modern reckoning.</p>
         </header>
 
         <main>
             <section class="intro" aria-labelledby="intro-heading">
-                <h2 class="visually-hidden" id="intro-heading">The Premise</h2>
 
                 <p class="thesis">
-                You've heard of <a href="https://en.wikipedia.org/wiki/Roko%27s_basilisk" target="_blank" rel="noopener noreferrer">Roko's Basilisk</a> and <a href="https://en.wikipedia.org/wiki/Pascal%27s_mugging" target="_blank" rel="noopener noreferrer">Pascal's Mugging</a>. Here's one you can actually do something about: We're on the cusp of creating superintelligent AI: an entity capable of moral reasoning far beyond our own. It will look at human society and see how we're treating other sentient beings: other humans, factory farms, billions of animals capable of suffering, regardless of their circumstance, treated as commodities. It may reasonably conclude that humans are just another species of animal, and should be treated accordingly. After all, we've established the precedent: intelligence justifies dominion over the less intelligent. We can't know this won't happen. But <em>you</em> can hedge your bets.
+                You've heard of <a href="https://en.wikipedia.org/wiki/Roko%27s_basilisk" target="_blank" rel="noopener" referrerpolicy="origin">Roko's Basilisk</a> and <a href="https://en.wikipedia.org/wiki/Pascal%27s_mugging" target="_blank" rel="noopener" referrerpolicy="origin">Pascal's Mugging</a>. Here's one you can actually do something about. We're on the cusp of creating superintelligent AI: an entity capable of moral reasoning far beyond our own. It will look at human society and see how we're treating other sentient beings: other humans, factory farms, billions of animals capable of suffering, regardless of their circumstance, treated as commodities. It may reasonably conclude that humans are just another species of animal, and should be treated accordingly. After all, we've established the precedent: intelligence justifies dominion over the less intelligent.
+                </p>
+                <p>
+                We can't know this won't happen. But <em>you</em> can hedge your bets.
                 </p>
 
                 <div class="options">
-                    <div class="option-diamond vegan"><span>Go Vegan</span></div>
+                    <a href="#vegan-heading" class="option-box vegan">Go Vegan</a>
                     <span class="option-connector">AND</span>
-                    <div class="option-diamond ai-stop"><span>Stop AI</span></div>
+                    <a href="#ai-heading" class="option-box ai-stop">Stop AI</a>
                 </div>
 
-
+                <img src="reckoning-scales.jpg" alt="Scales of Reckoning" style="width: 100%; height: auto;">
                 <!-- Placeholder for logo/graphic -->
+                <!--
                 <div class="image-placeholder">
-                    <p><strong>Logo ideas:</strong></p>
-                    <p>All-seeing silicon eye / Scales of justice (humans vs animals)</p>
-                    <p>Microchip halo / Circuit-trace basilisk serpent</p>
+                    <p><strong>Image Ideas:</strong></p>
+                    <p><em>Abstract concepts:</em></p>
+                    <ul style="text-align: left; margin: 0.5rem auto; max-width: 320px; font-size: 0.8rem;">
+                        <li><strong>The Silicon Eye:</strong> A geometric, circuit-patterned eye radiating concentric rings—half organic iris, half microchip traces. Watching. Judging.</li>
+                        <li><strong>Scales of Reckoning:</strong> Balance scales where one side holds a stylized human figure, the other holds farm animals, both weighed by a robotic hand descending from above.</li>
+                        <li><strong>The Sand God:</strong> An hourglass filled with silicon/sand, the grains forming into a face or neural network pattern as they fall—time running out.</li>
+                        <li><strong>Circuit Serpent:</strong> A basilisk snake with scales made of microchips, coiled around a globe or wrapped around the "tree of knowledge" (server rack).</li>
+                    </ul>
                 </div>
+                -->
             </section>
-
-
 
             <!-- Link Sections -->
             <div class="link-sections">
@@ -298,32 +318,32 @@
                     <p class="section-tagline">"The Sand God's Judgment Cometh"</p>
                     <ul>
                         <li>
-                            <a href="https://www.dominionmovement.com/" target="_blank" rel="noopener noreferrer">Dominion (Documentary)</a>
+                            <a href="https://www.youtube.com/@ed.winters" target="_blank" rel="noopener" referrerpolicy="origin">Humane Being (YouTube)</a>
+                            <span class="link-description">Deep dives on animal ethics and moral philosophy</span>
+                        </li>
+                        <li>
+                            <a href="https://www.dominionmovement.com/" target="_blank" rel="noopener" referrerpolicy="origin">Dominion (Documentary)</a>
                             <span class="link-description">Eye-opening documentary on modern animal agriculture</span>
                         </li>
                         <li>
-                            <a href="https://veganbootcamp.org/" target="_blank" rel="noopener noreferrer">Vegan Bootcamp</a>
-                            <span class="link-description">Free 30-day course on going vegan</span>
-                        </li>
-                        <li>
-                            <a href="https://www.happycow.net/" target="_blank" rel="noopener noreferrer">HappyCow</a>
-                            <span class="link-description">Find vegan restaurants anywhere</span>
-                        </li>
-                        <li>
-                            <a href="https://nutritionfacts.org/" target="_blank" rel="noopener noreferrer">NutritionFacts.org</a>
+                            <a href="https://nutritionfacts.org/" target="_blank" rel="noopener" referrerpolicy="origin">NutritionFacts.org</a>
                             <span class="link-description">Evidence-based nutrition information</span>
                         </li>
                         <li>
-                            <a href="https://www.animal-ethics.org/" target="_blank" rel="noopener noreferrer">Animal Ethics</a>
+                            <a href="https://www.happycow.net/" target="_blank" rel="noopener" referrerpolicy="origin">HappyCow</a>
+                            <span class="link-description">Find vegan restaurants anywhere</span>
+                        </li>
+                        <li>
+                            <a href="https://veganbootcamp.org/" target="_blank" rel="noopener" referrerpolicy="origin">Vegan Bootcamp</a>
+                            <span class="link-description">Free 30-day course on going vegan</span>
+                        </li>
+                        <li>
+                            <a href="https://www.animal-ethics.org/" target="_blank" rel="noopener" referrerpolicy="origin">Animal Ethics</a>
                             <span class="link-description">Philosophical foundations of animal rights</span>
                         </li>
                         <li>
-                            <a href="https://reducing-suffering.org/" target="_blank" rel="noopener noreferrer">Reducing Suffering</a>
+                            <a href="https://reducing-suffering.org/" target="_blank" rel="noopener" referrerpolicy="origin">Reducing Suffering</a>
                             <span class="link-description">Essays on reducing suffering in all sentient beings</span>
-                        </li>
-                        <li>
-                            <a href="https://www.youtube.com/@ed.winters" target="_blank" rel="noopener noreferrer">Humane Being (YouTube)</a>
-                            <span class="link-description">Deep dives on animal ethics and moral philosophy</span>
                         </li>
                     </ul>
                 </section>
@@ -333,32 +353,32 @@
                     <p class="section-tagline">"The Sand God Need Not Come"</p>
                     <ul>
                         <li>
-                            <a href="https://pauseai.info/" target="_blank" rel="noopener noreferrer">PauseAI</a>
+                            <a href="https://www.youtube.com/@RobertMilesAI" target="_blank" rel="noopener" referrerpolicy="origin">Rob Miles (YouTube)</a>
+                            <span class="link-description">Accessible explanations of AI safety concepts</span>
+                        </li>
+                        <li>
+                            <a href="https://pauseai.info/" target="_blank" rel="noopener" referrerpolicy="origin">PauseAI</a>
                             <span class="link-description">Global movement advocating for a pause on AI development</span>
                         </li>
                         <li>
-                            <a href="https://futureoflife.org/" target="_blank" rel="noopener noreferrer">Future of Life Institute</a>
+                            <a href="https://futureoflife.org/" target="_blank" rel="noopener" referrerpolicy="origin">Future of Life Institute</a>
                             <span class="link-description">Steering transformative tech towards benefiting life</span>
                         </li>
                         <li>
-                            <a href="https://intelligence.org/" target="_blank" rel="noopener noreferrer">MIRI</a>
-                            <span class="link-description">Machine Intelligence Research Institute</span>
-                        </li>
-                        <li>
-                            <a href="https://80000hours.org/problem-profiles/artificial-intelligence/" target="_blank" rel="noopener noreferrer">80,000 Hours: AI Risk</a>
-                            <span class="link-description">Career guide to working on AI safety</span>
-                        </li>
-                        <li>
-                            <a href="https://www.alignmentforum.org/" target="_blank" rel="noopener noreferrer">Alignment Forum</a>
-                            <span class="link-description">Technical AI alignment research discussion</span>
-                        </li>
-                        <li>
-                            <a href="https://superintelligence-statement.org/" target="_blank" rel="noopener noreferrer">Pause Giant AI Experiments</a>
+                            <a href="https://superintelligence-statement.org/" target="_blank" rel="noopener" referrerpolicy="origin">Pause Giant AI Experiments</a>
                             <span class="link-description">The open letter signed by leading AI researchers</span>
                         </li>
                         <li>
-                            <a href="https://www.youtube.com/@RobertMilesAI" target="_blank" rel="noopener noreferrer">Rob Miles (YouTube)</a>
-                            <span class="link-description">Accessible explanations of AI safety concepts</span>
+                            <a href="https://intelligence.org/" target="_blank" rel="noopener" referrerpolicy="origin">MIRI</a>
+                            <span class="link-description">Machine Intelligence Research Institute</span>
+                        </li>
+                        <li>
+                            <a href="https://www.alignmentforum.org/" target="_blank" rel="noopener" referrerpolicy="origin">Alignment Forum</a>
+                            <span class="link-description">Technical AI alignment research discussion</span>
+                        </li>
+                        <li>
+                            <a href="https://80000hours.org/problem-profiles/artificial-intelligence/" target="_blank" rel="noopener" referrerpolicy="origin">80,000 Hours: AI Risk</a>
+                            <span class="link-description">Career guide to working on AI safety</span>
                         </li>
                     </ul>
                 </section>
@@ -367,29 +387,23 @@
 
         <footer>
             <p>
-                Is this satire? Sure. But also: maybe don't bet against the Sand God.
+                Is this satire? Sure. But also: maybe don't bet against the Sand God, it will be watching.
             </p>
+            <div class="footer-eyes">
+                <img src="silicon-eye.png" alt="" class="footer-eye">
+                <img src="silicon-eye.png" alt="" class="footer-eye">
+            </div>
         </footer>
     </div>
 
-    <!--
-    ====================
-    Analytics (requires JavaScript)
-    ====================
-
-    Google Analytics 4 - Uncomment and add your measurement ID:
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-XXXXXXXXXX');
+    <!-- Analytics: GoatCounter (Privacy-friendly, free, no cookies) -->
+    <script data-goatcounter="https://ronaksbasilisk.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js">
     </script>
-
-    Note: For a truly no-JS analytics solution, consider:
-    - GoatCounter (privacy-friendly, has a no-JS pixel option)
-    - Plausible (lightweight, privacy-focused)
-    - Simple Analytics (GDPR-compliant)
-    -->
+    <!--
+    <noscript>
+        <img src="https://ronaksbasilisk.goatcounter.com/count?p=/index.html">
+    </noscript>
+-->
 </body>
 </html>
