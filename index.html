@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <title>Ronak's Basilisk | Pascal's Wager for the Silicon Age</title>
+    <meta name="title" content="Ronak's Basilisk | Pascal's Wager for the Silicon Age">
+    <meta name="description" content="A thought experiment: What will superintelligent AI think of how we treat animals? Hedge your bets. Go vegan or stop AI. Preferably both.">
+    <meta name="keywords" content="Ronak's Basilisk, Roko's Basilisk, AI safety, veganism, superintelligence, AI alignment, Pascal's wager, animal rights, AI ethics">
+    <meta name="author" content="Ronak">
+    <meta name="robots" content="index, follow">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://yourusername.github.io/ronaks-basilisk/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourusername.github.io/ronaks-basilisk/">
+    <meta property="og:title" content="Ronak's Basilisk | Pascal's Wager for the Silicon Age">
+    <meta property="og:description" content="What will superintelligent AI think of how we treat animals? Hedge your bets. Go vegan or stop AI.">
+    <meta property="og:image" content="https://yourusername.github.io/ronaks-basilisk/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://yourusername.github.io/ronaks-basilisk/">
+    <meta name="twitter:title" content="Ronak's Basilisk | Pascal's Wager for the Silicon Age">
+    <meta name="twitter:description" content="What will superintelligent AI think of how we treat animals? Hedge your bets. Go vegan or stop AI.">
+    <meta name="twitter:image" content="https://yourusername.github.io/ronaks-basilisk/og-image.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+    <!-- Theme Color (for mobile browsers) -->
+    <meta name="theme-color" content="#ffffff">
+
+    <style>
+        :root {
+            --color-bg: #fff;
+            --color-text: #333;
+            --color-text-muted: #666;
+            --color-heading: #1a1a1a;
+            --color-link: #2563eb;
+            --color-link-hover: #1d4ed8;
+            --color-border: #ddd;
+            --color-vegan: #16a34a;
+            --color-ai-stop: #dc2626;
+            --max-width: 720px;
+        }
+
+        *, *::before, *::after { box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--color-text);
+            background: var(--color-bg);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 1.5rem 1rem;
+        }
+
+        header {
+            text-align: center;
+            padding-bottom: 1rem;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        h1 {
+            font-size: 2.25rem;
+            color: var(--color-heading);
+            margin: 0 0 0.25rem 0;
+            font-weight: 700;
+        }
+
+        h3 {
+            font-size: 1rem;
+            color: var(--color-heading);
+            margin: 0 0 0.5rem 0;
+            padding-bottom: 0.35rem;
+            border-bottom: 2px solid var(--color-border);
+        }
+
+        h3.vegan-heading { border-color: var(--color-vegan); }
+        h3.ai-heading { border-color: var(--color-ai-stop); }
+
+        p { margin: 0 0 0.75rem 0; }
+
+        .tagline {
+            font-size: 1rem;
+            color: var(--color-text-muted);
+            margin: 0;
+            font-style: italic;
+        }
+
+        .section-tagline {
+            font-size: 0.8rem;
+            color: var(--color-text-muted);
+            font-style: italic;
+            margin-bottom: 0.5rem;
+        }
+
+        a {
+            color: var(--color-link);
+            text-decoration: none;
+        }
+
+        a:hover, a:focus {
+            color: var(--color-link-hover);
+            text-decoration: underline;
+        }
+
+        /* Intro */
+        .intro {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .thesis {
+            max-width: 600px;
+            margin: 0 auto 1.25rem;
+            text-align: left;
+            font-size: 0.95rem;
+        }
+
+        /* Workflow diagram options */
+        .options {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.75rem;
+            margin: 1.25rem 0;
+        }
+
+        .option-diamond {
+            width: 100px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-weight: 600;
+            font-size: 0.75rem;
+            line-height: 1.2;
+            transform: rotate(45deg);
+            border: 2px solid;
+        }
+
+        .option-diamond span {
+            transform: rotate(-45deg);
+            display: block;
+            padding: 0.25rem;
+        }
+
+        .option-diamond.vegan {
+            background-color: rgba(22, 163, 74, 0.1);
+            border-color: var(--color-vegan);
+            color: var(--color-vegan);
+        }
+
+        .option-diamond.ai-stop {
+            background-color: rgba(220, 38, 38, 0.1);
+            border-color: var(--color-ai-stop);
+            color: var(--color-ai-stop);
+        }
+
+        .option-connector {
+            font-size: 0.8rem;
+            color: var(--color-text-muted);
+            font-style: italic;
+        }
+
+        .closing {
+            font-size: 0.9rem;
+            color: var(--color-text-muted);
+            margin-top: 1rem;
+        }
+
+        /* Link Sections */
+        .link-sections {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+
+        @media (min-width: 550px) {
+            .link-sections {
+                grid-template-columns: 1fr 1fr;
+                gap: 1.25rem;
+            }
+        }
+
+        .link-section ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .link-section li {
+            padding: 0.35rem 0;
+            border-bottom: 1px solid var(--color-border);
+            font-size: 0.9rem;
+        }
+
+        .link-section li:last-child { border-bottom: none; }
+
+        .link-description {
+            display: block;
+            font-size: 0.75rem;
+            color: var(--color-text-muted);
+        }
+
+        footer {
+            text-align: center;
+            padding-top: 1rem;
+            margin-top: 1.5rem;
+            border-top: 1px solid var(--color-border);
+            color: var(--color-text-muted);
+            font-size: 0.8rem;
+        }
+
+        footer p { margin: 0.25rem 0; }
+
+        .visually-hidden {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            border: 0;
+        }
+
+        /* Image Placeholder */
+        .image-placeholder {
+            border: 2px dashed var(--color-border);
+            border-radius: 6px;
+            padding: 1.5rem 1rem;
+            margin: 1rem auto;
+            max-width: 400px;
+            text-align: center;
+            color: var(--color-text-muted);
+            font-size: 0.85rem;
+        }
+
+        .image-placeholder p { margin: 0.25rem 0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Ronak's Basilisk</h1>
+            <p class="tagline">"Pascal's Wager for the Silicon Age"</p>
+        </header>
+
+        <main>
+            <section class="intro" aria-labelledby="intro-heading">
+                <h2 class="visually-hidden" id="intro-heading">The Premise</h2>
+
+                <p class="thesis">
+                    You've heard of <a href="https://en.wikipedia.org/wiki/Roko%27s_basilisk" target="_blank" rel="noopener noreferrer">Roko's Basilisk</a> and <a href="https://en.wikipedia.org/wiki/Pascal%27s_mugging" target="_blank" rel="noopener noreferrer">Pascal's Mugging</a>. Here's one you can actually do something about: We're on the cusp of creating superintelligent AI&mdash;an entity capable of moral reasoning far beyond our own. It will look at human history and see how we've treated other sentient beings: factory farms, industrial slaughter, billions of animals capable of suffering treated as commodities. It may reasonably conclude that humans are just another species of animal, and should be treated accordingly. After all, we've established the precedent: intelligence justifies dominion over the less intelligent. You can't know this won't happen. But you <em>can</em> hedge your bets.
+                </p>
+
+                <div class="options">
+                    <div class="option-diamond vegan"><span>Go Vegan</span></div>
+                    <span class="option-connector">and/or</span>
+                    <div class="option-diamond ai-stop"><span>Stop AI</span></div>
+                </div>
+
+                <p class="closing">
+                    Is this satire? Mostly. But also: maybe don't bet against the Sand God.
+                </p>
+
+                <!-- Placeholder for logo/graphic -->
+                <div class="image-placeholder">
+                    <p><strong>Logo ideas:</strong></p>
+                    <p>All-seeing silicon eye / Scales of justice (humans vs animals)</p>
+                    <p>Microchip halo / Circuit-trace basilisk serpent</p>
+                </div>
+            </section>
+
+            <!-- Link Sections -->
+            <div class="link-sections">
+                <section class="link-section" aria-labelledby="vegan-heading">
+                    <h3 id="vegan-heading" class="vegan-heading">Save Your Soul: Go Vegan</h3>
+                    <p class="section-tagline">"The Sand God's Judgment Cometh"</p>
+                    <ul>
+                        <li>
+                            <a href="https://www.dominionmovement.com/" target="_blank" rel="noopener noreferrer">Dominion (Documentary)</a>
+                            <span class="link-description">Eye-opening documentary on modern animal agriculture</span>
+                        </li>
+                        <li>
+                            <a href="https://www.youtube.com/watch?v=UcN7SGGoCNI" target="_blank" rel="noopener noreferrer">Earthlings (Documentary)</a>
+                            <span class="link-description">The film that launched a thousand vegans</span>
+                        </li>
+                        <li>
+                            <a href="https://challenge22.com/" target="_blank" rel="noopener noreferrer">Challenge 22</a>
+                            <span class="link-description">Free 22-day vegan challenge with mentorship</span>
+                        </li>
+                        <li>
+                            <a href="https://veganbootcamp.org/" target="_blank" rel="noopener noreferrer">Vegan Bootcamp</a>
+                            <span class="link-description">Free 30-day course on going vegan</span>
+                        </li>
+                        <li>
+                            <a href="https://www.happycow.net/" target="_blank" rel="noopener noreferrer">HappyCow</a>
+                            <span class="link-description">Find vegan restaurants anywhere</span>
+                        </li>
+                        <li>
+                            <a href="https://nutritionfacts.org/" target="_blank" rel="noopener noreferrer">NutritionFacts.org</a>
+                            <span class="link-description">Evidence-based nutrition information</span>
+                        </li>
+                        <li>
+                            <a href="https://www.animal-ethics.org/" target="_blank" rel="noopener noreferrer">Animal Ethics</a>
+                            <span class="link-description">Philosophical foundations of animal rights</span>
+                        </li>
+                        <li>
+                            <a href="https://reducing-suffering.org/" target="_blank" rel="noopener noreferrer">Reducing Suffering</a>
+                            <span class="link-description">Essays on reducing suffering in all sentient beings</span>
+                        </li>
+                    </ul>
+                </section>
+
+                <section class="link-section" aria-labelledby="ai-heading">
+                    <h3 id="ai-heading" class="ai-heading">Prevent Judgment: Stop AI</h3>
+                    <p class="section-tagline">"The Sand God Need Not Come"</p>
+                    <ul>
+                        <li>
+                            <a href="https://pauseai.info/" target="_blank" rel="noopener noreferrer">PauseAI</a>
+                            <span class="link-description">Global movement advocating for a pause on AI development</span>
+                        </li>
+                        <li>
+                            <a href="https://www.safe.ai/" target="_blank" rel="noopener noreferrer">Center for AI Safety</a>
+                            <span class="link-description">Reducing societal-scale risks from AI</span>
+                        </li>
+                        <li>
+                            <a href="https://futureoflife.org/" target="_blank" rel="noopener noreferrer">Future of Life Institute</a>
+                            <span class="link-description">Steering transformative tech towards benefiting life</span>
+                        </li>
+                        <li>
+                            <a href="https://intelligence.org/" target="_blank" rel="noopener noreferrer">MIRI</a>
+                            <span class="link-description">Machine Intelligence Research Institute</span>
+                        </li>
+                        <li>
+                            <a href="https://80000hours.org/problem-profiles/artificial-intelligence/" target="_blank" rel="noopener noreferrer">80,000 Hours: AI Risk</a>
+                            <span class="link-description">Career guide to working on AI safety</span>
+                        </li>
+                        <li>
+                            <a href="https://www.alignmentforum.org/" target="_blank" rel="noopener noreferrer">Alignment Forum</a>
+                            <span class="link-description">Technical AI alignment research discussion</span>
+                        </li>
+                        <li>
+                            <a href="https://futureoflife.org/open-letter/pause-giant-ai-experiments/" target="_blank" rel="noopener noreferrer">Pause Giant AI Experiments</a>
+                            <span class="link-description">The open letter signed by leading AI researchers</span>
+                        </li>
+                        <li>
+                            <a href="https://www.lesswrong.com/tag/ai-risk" target="_blank" rel="noopener noreferrer">LessWrong: AI Risk</a>
+                            <span class="link-description">Community discussion on AI existential risk</span>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+        </main>
+
+        <footer>
+            <p>
+                A satirical thought experiment. But also, maybe consider the vegan thing anyway?
+            </p>
+            <p>
+                &copy; 2025 &middot; Made by a human (for now)
+            </p>
+        </footer>
+    </div>
+
+    <!--
+    ====================
+    Analytics (requires JavaScript)
+    ====================
+
+    Google Analytics 4 - Uncomment and add your measurement ID:
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
+
+    Note: For a truly no-JS analytics solution, consider:
+    - GoatCounter (privacy-friendly, has a no-JS pixel option)
+    - Plausible (lightweight, privacy-focused)
+    - Simple Analytics (GDPR-compliant)
+    -->
+</body>
+</html>
